@@ -381,8 +381,10 @@ export default {
     computed: {
         isSelf() {
             return function (item) {
+                console.log("userId = ",item, this.userId)
+                console.log("address = ",item, this.ipAddress)
                 return (
-                    item.ipAddress == this.ipAddress ||
+                    (item.ipAddress == this.ipAddress && this.ipAddress!="未知ip") ||
                     (item.userId != null && item.userId == this.userId)
                 );
             };

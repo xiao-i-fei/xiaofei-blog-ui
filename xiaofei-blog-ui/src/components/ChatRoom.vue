@@ -382,7 +382,7 @@ export default {
         isSelf() {
             return function (item) {
                 return (
-                    item.ipAddress == this.ipAddress ||
+                    (item.ipAddress == this.ipAddress && this.ipAddress!="未知ip") ||
                     (item.userId != null && item.userId == this.userId)
                 );
             };

@@ -261,7 +261,7 @@ export default {
                     if (nodes.length) {
                         for (let i = 0; i < nodes.length; i++) {
                             let node = nodes[i];
-                            let reg = /^H[1-4]{1}$/;
+                            let reg = /^H[1-6]{1}$/;
                             if (reg.exec(node.tagName)) {
                                 node.id = i;
                             }
@@ -270,7 +270,7 @@ export default {
                     tocbot.init({
                         tocSelector: "#toc", //要把目录添加元素位置，支持选择器
                         contentSelector: ".article-content", //获取html的元素
-                        headingSelector: "h1, h2, h3", //要显示的id的目录
+                        headingSelector: "h1, h2, h3, h4, h5, h6", //要显示的id的目录
                         hasInnerContainers: true,
                         onClick: function (e) {
                             e.preventDefault();

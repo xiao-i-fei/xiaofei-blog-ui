@@ -28,8 +28,8 @@ export default {
     data: function () {
         return {
             loginForm: {
-                username: "",
-                password: ""
+                username: "test123",
+                password: "test123",
             },
             rules: {
                 username: [

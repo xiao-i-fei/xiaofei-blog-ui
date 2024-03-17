@@ -16,30 +16,34 @@
             <!-- 对话内容 -->
             <div class="message" id="message">
                 <!-- 录音遮罩层 -->
-                <div v-show="voiceActive" class="voice" @mousemove.prevent.stop="translationmove($event)" @mouseup.prevent.stop="translationEnd($event)">
+                <div v-show="voiceActive" class="voice" @mousemove.prevent.stop="translationmove($event)"
+                     @mouseup.prevent.stop="translationEnd($event)">
                     <v-icon ref="voiceClose" class="close-voice">mdi-close</v-icon>
                 </div>
                 <div :class="isMyMessage(item)" v-for="(item, index) of chatRecordList" :key="index">
                     <!-- 头像 -->
-                    <img  alt="" :src="item.avatar" :class="isleft(item)"/>
+                    <img alt="" :src="item.avatar" :class="isleft(item)"/>
                     <div>
                         <div class="nickname" v-if="!isSelf(item)">{{ item.nickname }}
                             <span style="margin-left:12px">{{ item.createTime | hour }}</span>
                         </div>
                         <!-- 内容 -->
-                        <div ref="content" @contextmenu.prevent.stop="showBack(item, index, $event)" :class="isMyContent(item)">
+                        <div ref="content" @contextmenu.prevent.stop="showBack(item, index, $event)"
+                             :class="isMyContent(item)">
                             <!-- 文字消息 -->
                             <div v-if="item.type == 3" v-html="item.content"/>
                             <!-- 语音消息 -->
                             <div v-if="item.type == 5" @click.prevent.stop="playVoice(item)">
                                 <audio @ended="endVoice(item)" @canplay="getVoiceTime(item)" ref="voices"
-                                    :src="item.content" style="display:none"/>
+                                       :src="item.content" style="display:none"/>
                                 <!-- 播放 -->
-                                <v-icon :color="isSelf(item) ? '#fff' : '#000'" ref="plays" style="display:inline-flex;cursor: pointer;">
+                                <v-icon :color="isSelf(item) ? '#fff' : '#000'" ref="plays"
+                                        style="display:inline-flex;cursor: pointer;">
                                     mdi-arrow-right-drop-circle
                                 </v-icon>
                                 <!-- 暂停 -->
-                                <v-icon :color="isSelf(item) ? '#fff' : '#000'" ref="pauses" style="display:none;cursor: pointer;">
+                                <v-icon :color="isSelf(item) ? '#fff' : '#000'" ref="pauses"
+                                        style="display:none;cursor: pointer;">
                                     mdi-pause-circle
                                 </v-icon>
                                 <!-- 音频时长 -->
@@ -67,14 +71,18 @@
                     mdi-keyboard
                 </v-icon>
                 <!-- 文字输入 -->
-                <textarea v-show="!isVoice" ref="chatInput" v-model="content" @keydown.enter="saveMessage($event)" placeholder="请输入内容"/>
+                <textarea v-show="!isVoice" ref="chatInput" v-model="content" @keydown.enter="saveMessage($event)"
+                          placeholder="请输入内容"/>
                 <!-- 语音输入 -->
-                <button class="voice-btn" v-show="isVoice" @mousedown.prevent.stop="translationStart" @touchmove.prevent.stop="translationmove($event)"
-                    @mouseup.prevent.stop="translationEnd($event)" @touchstart.prevent.stop="translationStart" @touchend.prevent.stop="translationEnd($event)">
+                <button class="voice-btn" v-show="isVoice" @mousedown.prevent.stop="translationStart"
+                        @touchmove.prevent.stop="translationmove($event)"
+                        @mouseup.prevent.stop="translationEnd($event)" @touchstart.prevent.stop="translationStart"
+                        @touchend.prevent.stop="translationEnd($event)">
                     按住说话
                 </button>
                 <!-- 表情 -->
-                <i class="iconfont iconbiaoqing emoji" :style="isEmoji ? 'color:#FFC83D' : ''" @click.prevent.stop="openEmoji"/>
+                <i class="iconfont iconbiaoqing emoji" :style="isEmoji ? 'color:#FFC83D' : ''"
+                   @click.prevent.stop="openEmoji"/>
                 <!-- 发送按钮 -->
                 <i :class="isInput" @click="saveMessage" style="font-size: 1.5rem"/>
             </div>
@@ -374,7 +382,7 @@ export default {
         isSelf() {
             return function (item) {
                 return (
-                    item.ipAddress == this.ipAddress ||
+                    (item.ipAddress == this.ipAddress && this.ipAddress!="未知ip") ||
                     (item.userId != null && item.userId == this.userId)
                 );
             };

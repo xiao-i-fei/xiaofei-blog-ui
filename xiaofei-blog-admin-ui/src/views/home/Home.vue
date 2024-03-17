@@ -2,7 +2,7 @@
     <div>
         <!-- 统计数据 -->
         <el-row :gutter="30">
-            <el-col :span="6">
+            <el-col :xs="24" :sm="12" :lg="6">
                 <el-card>
                     <div class="card-icon-container">
                         <i class="iconfont el-icon-myfangwenliang" style="color:#40C9C6"/>
@@ -13,7 +13,7 @@
                     </div>
                 </el-card>
             </el-col>
-            <el-col :span="6">
+            <el-col :xs="24" :sm="12" :lg="6">
                 <el-card>
                     <div class="card-icon-container">
                         <i class="iconfont el-icon-myuser" style="color:#34BFA3"/>
@@ -24,7 +24,7 @@
                     </div>
                 </el-card>
             </el-col>
-            <el-col :span="6">
+            <el-col :xs="24" :sm="12" :lg="6">
                 <el-card>
                     <div class="card-icon-container">
                         <i class="iconfont el-icon-mywenzhang-copy" style="color:#F4516C"/>
@@ -35,7 +35,7 @@
                     </div>
                 </el-card>
             </el-col>
-            <el-col :span="6">
+            <el-col :xs="24" :sm="12" :lg="6">
                 <el-card>
                     <div class="card-icon-container">
                         <i class="el-icon-s-comment" style="color:#36A3F7"/>
@@ -63,7 +63,7 @@
         </el-card>
         <el-row :gutter="20" style="margin-top:1.25rem">
             <!-- 文章浏览量排行 -->
-            <el-col :span="16">
+            <el-col :xs="24" :sm="24" :lg="12">
                 <el-card>
                     <div class="e-title">文章浏览量排行</div>
                     <div style="height:350px">
@@ -72,7 +72,7 @@
                 </el-card>
             </el-col>
             <!-- 分类数据统计 -->
-            <el-col :span="8">
+            <el-col :xs="24" :sm="24" :lg="12">
                 <el-card>
                     <div class="e-title">文章分类统计</div>
                     <div style="height:350px">
@@ -83,7 +83,7 @@
         </el-row>
         <el-row :gutter="20" style="margin-top:1.25rem">
             <!-- 用户地域分布 -->
-            <el-col :span="16">
+            <el-col :xs="24" :sm="24" :lg="12">
                 <el-card>
                     <div class="e-title">用户地域分布</div>
                     <div style="height:350px" v-loading="loading">
@@ -98,7 +98,7 @@
                 </el-card>
             </el-col>
             <!-- 文章标签统计 -->
-            <el-col :span="8">
+            <el-col :xs="24" :sm="24" :lg="12">
                 <el-card>
                     <div class="e-title">文章标签统计</div>
                     <div style="height:350px;" v-loading="loading">

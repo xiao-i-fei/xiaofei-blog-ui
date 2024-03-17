@@ -25,9 +25,9 @@
         <!-- 绑定邮箱模态框 -->
         <EmailModel></EmailModel>
         <!-- 音乐播放器：整合网易云，需要一个id，目前不知id是何值，先将音乐播放组件注释 -->
-        <!--<Player v-if="blogInfo.websiteConfig.isMusicPlayer == 1 && !isMobile"/>-->
+        <Player v-if="blogInfo.websiteConfig.isMusicPlayer == 1 && !isMobile"/>
         <!-- 聊天室【这里先将聊天室功能注释掉，聊天的话需要整合：website】 -->
-        <!--<ChatRoom v-if="blogInfo.websiteConfig.isChatRoom == 1"></ChatRoom>-->
+        <ChatRoom v-if="blogInfo.websiteConfig.isChatRoom == 1 && userId > 0"></ChatRoom>
     </v-app>
 </template>
 
@@ -80,7 +80,10 @@ export default {
                 /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
             );
             return flag;
-        }
+        },
+        userId() {
+            return this.$store.state.userId;
+        },
     }
 };
 </script>

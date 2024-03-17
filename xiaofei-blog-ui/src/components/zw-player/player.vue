@@ -162,7 +162,7 @@ export default {
             talkicon2,
             playState: true,
             playIcon: pause,
-            musicImg: "",
+            musicImg: "https://xiaofei-mall.oss-cn-beijing.aliyuncs.com/%E9%80%9A%E7%94%A8%E5%9B%BE%E7%89%87/%E5%A4%B4%E5%83%8F/IMG_20220401_113118.jpg",
             musicUrl: "",
             musicWords: [],
             musicTitle: "",

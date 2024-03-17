@@ -81,11 +81,11 @@ export default {
             }, 1000);
         },
         forget() {
-            var reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            /* var reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
             if (!reg.test(this.username)) {
                 this.$toast({type: "error", message: "邮箱格式不正确"});
                 return false;
-            }
+            } */
             if (this.code.trim().length != 6) {
                 this.$toast({type: "error", message: "请输入6位验证码"});
                 return false;

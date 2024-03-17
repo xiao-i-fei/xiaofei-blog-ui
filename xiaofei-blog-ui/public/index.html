@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+        <!-- 将http强制转换为https -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/> -->
+
         <link rel="icon" href="<%= BASE_URL %>favicon.ico">
         <title>小飞个人博客</title>
 
@@ -23,22 +25,22 @@
         <!--<script src="../src/assets/js/cdn-js/TCaptcha.js"></script>-->
 
         <!-- 微博登录引用的在线js -->
-        <!--<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4039197195" type="text/javascript"
-                charset="utf-8"></script>-->
+        <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=4039197195" type="text/javascript"
+                charset="utf-8"></script>
         <!--<script type="text/javascript" src="cdn-js/wb.js" data-appid="101878726"
-                data-redirecturi="https://www.talkxj.com/oauth/login/qq" charset="utf-8"></script>-->
+                data-redirecturi="https://www.nastt.fun/oauth/login/qq" charset="utf-8"></script>-->
 
         <!-- QQ登录引用的在线js -->
-        <!--<script type="text/javascript" src="http://connect.qq.com/qc_jssdk.js" data-appid="101878726"
-                data-redirecturi="https://www.talkxj.com/oauth/login/qq" charset="utf-8"></script>-->
-        <!--<script type="text/javascript" src="cdn-js/qc_jssdk.js" data-appid="101878726"
-                data-redirecturi="https://www.talkxj.com/oauth/login/qq" charset="utf-8"></script>-->
+        <script type="text/javascript" src="https://connect.qq.com/qc_jssdk.js" data-appid="101878726"
+                data-redirecturi="https://www.nastt.fun/oauth/login/qq" charset="utf-8"></script>
+        <!--        <script type="text/javascript" src="cdn-js/qc_jssdk.js" data-appid="101878726"
+                        data-redirecturi="https://www.nastt.fun/oauth/login/qq" charset="utf-8"></script>-->
 
     </head>
     <body>
         <div id="app"></div>
-        <script type="text/javascript" src="https://static.talkxj.com//js/ribbon.js"></script>
-        <!-- <script src="../src/assets/js/cdn-js/ribbon.js"></script> -->
+        <!-- <script type="text/javascript" src="https://static.talkxj.com//js/ribbon.js"></script> -->
+        <script src="../src/assets/js/cdn-js/ribbon.js"></script>
     </body>
 </html>
 
